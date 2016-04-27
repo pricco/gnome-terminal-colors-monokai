@@ -100,7 +100,11 @@ set_profile_colors() {
     then local profile_path=$dconfdir/$profile
 
     # set color palette
-    dconf write $profile_path/palette "['$(cat $dir/$COLOR/palette)']"
+    if [ "$COLOR" = "default" ]
+      then palette_value="['$(cat $dir/$COLOR/palette)']"
+      else palette_value="[$(cat $dir/$COLOR/palette)]"
+    fi
+    dconf write $profile_path/palette $palette_value
 
     # set foreground, background and highlight color
     dconf write $profile_path/bold-color "'$(cat $bd_color_file)'"

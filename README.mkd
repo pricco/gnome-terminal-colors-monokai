@@ -6,7 +6,7 @@ Scripts for setting the Monokai color set with Gnome Terminal.
 Installation and usage
 ----------------------
 
-Clone the [git repository], then run `./install.sh`.
+Clone the [git repository](https://github.com/pricco/gnome-terminal-colors-monokai.git), then run `./install.sh`.
 
     $ git clone git://github.com/pricco/gnome-terminal-colors-monokai.git
     $ cd gnome-terminal-colors-monokai

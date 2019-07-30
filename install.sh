@@ -13,7 +13,7 @@ dir=$(dirname $0)
 gnomeVersion="$(expr "$(gnome-terminal --version)" : '.* \(.*[.].*[.].*\)$')"
 if [ -f /usr/share/gnome/gnome-version.xml ];
 then
-  gnomeVersion=$(cat /usr/share/gnome/gnome-version.xml | grep "platform\|minor\|micro" | grep -o -E '[0-9]+' | xargs | sed 's/ /./g')
+  gnomeVersion=$(cat /usr/share/gnome/gnome-version.xml | grep "platform\|minor\|micro" | grep -oE '[0-9]+' | xargs | sed 's/ /./g')
 fi
 
 # newGnome=1 if the gnome-terminal version >= 3.8
